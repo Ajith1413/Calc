@@ -25,117 +25,118 @@ Validate the HTML and CSS code.
 Publish the website in the given URL.
 
 ## PROGRAM :
-~~~
-Register Number:212223230009
-Developed By: AJITHKUMAR A
-
-<title>Calculator</title>
-    <script>
-    function calculate(args)
-    {
-        res = document.getElementById("result");
-        expression = res.innerText;
-        cmd = args.srcElement.innerText;
-        if(cmd == "=")
-        {
-            expression = "" + eval(expression)
-        }
-        else if(cmd == "C")
-        {
-            expression=""
-        }
-        else if(cmd == "DEL")
-        {
-            expression = expression.slice(0, -1);
-
-        }
-        else if(cmd == "√")
-        {
-            expression = "" + Math.sqrt(eval(expression));
-        }
-        else if(cmd == "%")
-        {
-            expression = expression % 1;
-        }
-        else if(cmd == "log")
-         {
-    expression = Math.log10(expression);
-       }
-   
-        else{
-            expression = expression + cmd;
-        }
-        res.innerText = expression;
-        
-
-    }
-     
-    </script>
-
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
     <style>
-      
-        .calculator-container {
-            width: 400px;
-            background-color:rgb(187, 69, 14);
-            margin: 0 auto; 
-            margin-top: 100px;
-            text-align: center;
-            
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
 
-       
+        #calculator-container {
+            background-color:rgb(16, 209, 126);
+            text-align: center;
+            border: 1px solid #12121200;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 85%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+
         button {
             width: 50px;
-            height: 50px;
-            margin: 10px; 
-            font-size: 25px; 
-            
-            background-color: blue; 
-            color: black (255, 255, 255); 
-            border: none;
-        }
-
-      
-        #result {
-            
-   background-color:rgb(211, 218, 8);
-text-align: right;
-padding-right: 50px;
-font-size: 25px;
-margin-bottom: 20px; 
-border: solid black 0.5px;
-color: black;
-width: 348px;
-height: 50px;
-display: flex;
-align-items: center;
-justify-content: flex-end;
-
-        }
-        h1 {
-            padding-top: 10px;
-            color:rgb(7, 7, 7);
-            font-size: 50px;
-        }
-        .redd {
-            background-color:black(244, 240, 240);
-            color: rgb(12, 11, 11)
-        }
-        .bluee {
-            
-            background-color:rgb(20, 183, 79);
-            color: rgb(49, 25, 165) (218, 188, 188);
-            font-size: 17px;
-        }
-        body {
-            background-color: palevioletred
+            height: 48px;
+            font-size: 16px;
+            margin: 5px;
         }
     </style>
-
 </head>
-~~~
+<body>
+    <div id="calculator-container">
+        <h2><font color= "white"></fontcolor>AJITH KUMAR</h2>
+        <h3>23002150</h3>
+        <h2>CALCULATOR</h2>
+
+        <input type="text" id="display" disabled>
+
+        <br>
+	<button onclick="appendToDisplay('(')">(</button>
+	<button onclick="appendToDisplay(')')">)</button>
+	<button onclick="appendToDisplay('.')">.</button>
+    <button onclick="apprndToDisplay('+')">+</button>
+	
+            
+ 	<br>
+
+       
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="appendToDisplay('-')">-</button>
+	
+        
+
+        <br>
+
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="appendToDisplay('*')">*</button>
+        
+
+        <br>
+	
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="appendToDisplay('/')">/</button>
+
+        
+	<br>
+    <button onclick="calculate()">=</button>
+    <button onclick="appendToDisplay('0')">0</button>
+	
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="appendToDisplay('%')">%</button>
+    </div>
+
+    <script>
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function calculate() {
+            try {
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
+```
 ## OUTPUT:
-![image](https://github.com/Ajith1413/Calc/assets/139842524/d4b34443-7945-41fd-a41d-77c8b9b6a4c5)
+![image](https://github.com/Ajith1413/Calc/assets/139842524/6db12902-8985-49b0-b72e-08ef5d1826f5)
+![image](https://github.com/Ajith1413/Calc/assets/139842524/61349074-2906-422a-af9d-a2f931b6510b)
+
+
 
 ## RESULT:
 The program for designing a standard calculator using HTML and CSS is executed successfully.
